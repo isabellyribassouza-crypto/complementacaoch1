@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6558d3">
+  <meta name="description" content="Organize projetos e requisitos de software com ReqAI.">
+  <title>ReqAI - Engenharia de Requisitos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>ReqAI</h1>
+    <p>Seu espaço para planejar projetos de software</p>
+  </header>
+
+  <main>
+    <section class="resumo">
+      <article class="card">
+        <h3>Projetos</h3>
+        <p id="totalProjetos">0</p>
+      </article>
+      <article class="card">
+        <h3>Requisitos</h3>
+        <p id="totalRequisitos">0</p>
+      </article>
+      <article class="card">
+        <h3>Concluídos</h3>
+        <p id="totalConcluidos">0</p>
+      </article>
+    </section>
+
+    <section class="painel">
+      <h2>Novo projeto</h2>
+      <form id="formProjeto">
+        <label for="nomeProjeto">Nome do projeto</label>
+        <input id="nomeProjeto" type="text"
+          placeholder="Ex.: Aplicativo de estudos" required>
+
+        <label for="descricaoProjeto">Descrição</label>
+        <textarea id="descricaoProjeto"
+          placeholder="Qual problema o projeto resolve?"></textarea>
+
+        <button type="submit">Cadastrar projeto</button>
+      </form>
+    </section>
+
+    <section class="painel">
+      <h2>Novo requisito</h2>
+      <form id="formRequisito">
+        <label for="projetoRequisito">Projeto</label>
+        <select id="projetoRequisito" required>
+          <option value="">Selecione um projeto</option>
+        </select>
+
+        <label for="tituloRequisito">Título</label>
+        <input id="tituloRequisito" type="text"
+          placeholder="Ex.: Cadastrar usuário" required>
+
+        <label for="descricaoRequisito">Descrição</label>
+        <textarea id="descricaoRequisito"
+          placeholder="O que o sistema deve fazer?" required></textarea>
+
+        <label for="tipoRequisito">Tipo</label>
+        <select id="tipoRequisito">
+          <option value="Funcional">Funcional</option>
+          <option value="Não funcional">Não funcional</option>
+        </select>
+
+        <label for="prioridadeRequisito">Prioridade</label>
+        <select id="prioridadeRequisito">
+          <option value="Alta">Alta</option>
+          <option value="Média" selected>Média</option>
+          <option value="Baixa">Baixa</option>
+        </select>
+
+        <button type="submit">Cadastrar requisito</button>
+      </form>
+    </section>
+
+    <section class="painel">
+      <h2>Meus projetos</h2>
+      <div id="listaProjetos"></div>
+    </section>
+
+    <section class="painel">
+      <h2>Meus requisitos</h2>
+
+      <label for="filtroTipo">Filtrar por tipo</label>
+      <select id="filtroTipo">
+        <option value="Todos">Todos</option>
+        <option value="Funcional">Funcional</option>
+        <option value="Não funcional">Não funcional</option>
+      </select>
+
+      <div id="listaRequisitos"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>ReqAI — Planejamento inteligente de software</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
